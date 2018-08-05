@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>lista aukcji</h1>
+
+    {% for auction in auctions %}
+        <h3><a href="{{ url('auction_details', {"id":auction.id}) }}"> {{ auction.title }}</a></h3>
+        <p>{{ auction.description }}</p>
+        <p>Cena: {{ auction.price }}</p>
+    {% endfor %}
+{% endblock %}
